@@ -2,7 +2,7 @@
 source_model: STAGE_CMIS_dbo__Customer
 derived_columns:
   DV_RECORD_SOURCE: '!CMIS_dbo__Customer'
-  DV_LOAD_DATE: cast('{{ var('load_date') }}' as DATETIME)
+  DV_LOAD_DATE: cast( DV_APPLIED_DATE as DATETIME)
   CUSTOMER_CODE: Code
   DV_TENANT_ID: '!default'
   DV_BKEY_CODE: '!default'
