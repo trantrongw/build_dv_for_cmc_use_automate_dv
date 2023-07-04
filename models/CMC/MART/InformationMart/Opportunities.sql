@@ -3,4 +3,4 @@ select
     ,A.Code as Code
 	,CAST(A.CreatedDate AS DATE) AS _KEY_OPP_DATE
 	,A.StatusID AS _KEY_OPP_STATUS
-from {{ source("DWH", "Opportunities") }} A
+from {{ source("DWH", "Staging__CMIS_dbo_Opportunities") }} A

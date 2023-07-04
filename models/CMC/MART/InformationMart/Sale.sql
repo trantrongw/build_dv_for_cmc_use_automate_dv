@@ -17,14 +17,14 @@ SELECT CONVERT(VARCHAR(32),
        CAST(E.LockDate AS DATE) AS _KEY_SALE_DATE,
        b.SolutionBranchID AS _KEY_SOLUTION
        ,SUM(b.TotalBeforeVAT) AS [Amount Exclude VAT]
-FROM  {{ source("DWH", "Orders") }} a
-    INNER JOIN {{ source("DWH", "OrderDetails") }} b
+FROM  {{ source("DWH", "Staging__CMIS_dbo_Orders") }} a
+    INNER JOIN {{ source("DWH", "Staging__CMIS_dbo_OrderDetails") }} b
         ON a.ID = b.OrderID
-    INNER JOIN  {{ source("DWH", "Opportunities") }} C
+    INNER JOIN  {{ source("DWH", "Staging__CMIS_dbo_Opportunities") }} C
         ON a.OpportunityID = C.ID
-    INNER JOIN {{ source("DWH", "Contracts") }} D
+    INNER JOIN {{ source("DWH", "Staging__CMIS_dbo_Contracts") }} D
         ON a.OpportunityID = D.OpportunityID
-    INNER JOIN {{ source("DWH", "ContractLockStatus") }} E
+    INNER JOIN {{ source("DWH", "Staging__CMIS_dbo_ContractLockStatus") }} E
         ON D.ID = E.ContractID
 WHERE a.Activate = 1
       AND b.IsMain = 1

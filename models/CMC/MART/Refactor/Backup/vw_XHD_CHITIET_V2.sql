@@ -6,5 +6,5 @@ SELECT ngay_ct,
        ps_co AS XuatHoaDon,
        ps_no AS HBTL,
        line_nbr
-FROM {{ source('DWH', 'ct00') }}
+FROM {{ source('DWH', 'Staging__CMIS_dbo_ct00') }}
 

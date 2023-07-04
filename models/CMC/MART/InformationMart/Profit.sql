@@ -9,14 +9,14 @@ SELECT
        CAST(E.LockDate AS DATE) AS _KEY_SALE_DATE,
        b.SolutionBranchID AS _KEY_SOLUTION,
        SUM(COALESCE(QTHD.Profit, ec.Profit, bl.Profit) * (b.TotalBeforeVAT / a.TotalBeforeVAT)) AS Amount
-FROM  {{ source("DWH", "Orders") }} a
-    INNER JOIN {{ source("DWH", "OrderDetails") }} b
+FROM  {{ source("DWH", "Staging__CMIS_dbo_Orders") }} a
+    INNER JOIN {{ source("DWH", "Staging__CMIS_dbo_OrderDetails") }} b
         ON a.ID = b.OrderID
-    INNER JOIN  {{ source("DWH", "Opportunities") }} C
+    INNER JOIN  {{ source("DWH", "Staging__CMIS_dbo_Opportunities") }} C
         ON a.OpportunityID = C.ID
-    INNER JOIN {{ source("DWH", "Contracts") }} D
+    INNER JOIN {{ source("DWH", "Staging__CMIS_dbo_Contracts") }} D
         ON a.OpportunityID = D.OpportunityID
-    INNER JOIN {{ source("DWH", "ContractLockStatus") }} E
+    INNER JOIN {{ source("DWH", "Staging__CMIS_dbo_ContractLockStatus") }} E
         ON D.ID = E.ContractID
     LEFT JOIN {{ ref('vw_BusinessPlans_Cleansing') }} bl	ON C.ID = 	bl.OpportunityID													
 	LEFT JOIN {{ ref('vw_EstimateContracts_Cleansing') }} ec ON C.ID = ec.OpportunityID			

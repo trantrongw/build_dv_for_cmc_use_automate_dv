@@ -23,7 +23,13 @@ target-path: "target"  # directory which will store compiled SQL files
 clean-targets:         # directories to be removed by `dbt clean`
   - "target"
   - "dbt_packages"
-
+vars:
+  load_date: '2023-04-12'
+  applied_date: '1992-01-08'
+  dbt_date:time_zone: "Asia/Ho_Chi_Minh"
+  hash: MD5 # or SHA
+  enable_ghost_records: true
+  system_record_value: 'DBTVAULT_SYSTEM'
 
 # Configuring models
 # Full documentation: https://docs.getdbt.com/docs/configuring-models

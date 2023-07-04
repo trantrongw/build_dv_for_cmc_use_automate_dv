@@ -7,4 +7,4 @@ select
 	,A.ParentID as SolutionParentID 
 	,A.ADN 
 	,IIF(A.Code LIKE 'BM%', IIF(A.Code NOT LIKE 'BM1%', 'BigMove', N'Truyền thống'), N'Truyền thống') AS [Solution Type]
-from branches A 
+from Branches A 

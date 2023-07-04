@@ -1,9 +1,9 @@
 {{ config(materialized='ephemeral') }}
 select
-    contractid,
-    sum(total) as total,
-    sum(totallockvat) as totallockvat,
-    max(lockdate) as lockdate
-from {{ source("DWH", "ContractLockStatus") }}
-where islock = 1
-group by contractid
+    ContractID,
+    sum(Total) as total,
+    sum(TotalLockVAT) as totallockvat,
+    max(LockDate) as lockdate
+from {{ source("DWH", "Staging__CMIS_dbo_ContractLockStatus") }}
+where IsLock = 1
+group by ContractID

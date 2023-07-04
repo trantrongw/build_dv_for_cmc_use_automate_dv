@@ -1,3 +1,3 @@
 select
     *
-from  {{ source('DWH', 'industrytypes') }} 
+from  {{ source('DWH', 'Staging__CMIS_dbo_industrytypes') }} 

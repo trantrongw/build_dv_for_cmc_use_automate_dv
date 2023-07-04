@@ -8,7 +8,7 @@ SELECT DISTINCT
        COALESCE(ord.perc,con.perc) AS Perc,
        COALESCE(ord.perc,con.perc) * lok.total AS Allocation,
        lok.lockdate ngayghinhandoanhso
-FROM {{ source("DWH", "Opportunities") }} opp
+FROM {{ source("DWH", "Staging__CMIS_dbo_Opportunities") }} opp
     LEFT JOIN {{ ref("vw_Orders_Cleansing") }} ord
         ON ord.opportunityid = opp.ID
     LEFT JOIN {{ ref("vw_Contracts_Cleansing") }} con

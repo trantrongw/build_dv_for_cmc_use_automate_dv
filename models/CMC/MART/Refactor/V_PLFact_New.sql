@@ -8,7 +8,7 @@ SELECT CONVERT(NVARCHAR(500), opp.Code) AS opportunity_code,
        IIF(Invoice.TongXuatHD IS NOT NULL,OrdCon.Perc*Invoice.Perc*Profit.LaiGop,OrdCon.Perc*Profit.LaiGop) AS [Sale Profit]
 	   ,OrdCon.Perc * Invoice.TongXuatHD AS [Invoice Amount]
 	   ,OrdCon.Perc * Invoice.Perc * Profit.LaiGop AS [Invoice Profit]
-from {{ source("DWH", "Opportunities") }} opp
+from {{ source("DWH", "Staging__CMIS_dbo_Opportunities") }} opp
 left join {{ ref("vw_Invoice") }} Invoice on opp.code = Invoice.opportunitycode
 left join {{ ref("vw_OrderContract") }} OrdCon on  opp.id = OrdCon.opportunityid
 left join {{ ref("vw_Profit") }} Profit on opp.id = Profit.mvv_id

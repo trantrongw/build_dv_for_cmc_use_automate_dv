@@ -19,5 +19,7 @@ from
         group by ord.opportunityid, ord.opportunitycode, ord.orderid,ord.contractid
     ) a
 left join
-    "DEV_CMIS_DWH"."PowerBI"."vw_ContractLockStatus_Cleaning" b
+    {{ ref("vw_ContractLockStatus_Cleaning") }} b
     on a.contractid = b.contractid
+
+

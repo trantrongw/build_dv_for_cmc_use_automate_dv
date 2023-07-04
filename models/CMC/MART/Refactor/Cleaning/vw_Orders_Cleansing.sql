@@ -7,6 +7,6 @@ select
     round(b.totalbeforevat, 0) totalbeforevat,
     round(a.totalbeforevat, 0) sumtotalbeforevat
     ,b.totalbeforevat/NULLIF(a.totalbeforevat,0) perc
-from {{ source("DWH", "Orders") }} a
-inner join {{ source("DWH", "OrderDetails") }} b on a.id = b.orderid
+from {{ source("DWH", "Staging__CMIS_dbo_Orders") }} a
+inner join {{ source("DWH", "Staging__CMIS_dbo_OrderDetails") }} b on a.id = b.orderid
 where a.activate = 1 and b.ismain = 1

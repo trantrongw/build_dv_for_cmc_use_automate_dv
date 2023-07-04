@@ -8,7 +8,7 @@ from
                 partition by t.opportunityid
                 order by t.finalizationcontracttype desc, t.modifieddate desc
             )
-        from {{ source("DWH", "FinalizationContracts") }} t
+        from {{ source("DWH", "Staging__CMIS_dbo_FinalizationContracts") }} t
         where t.wfisfinish = 1 and t.activate = 1
 
     ) t

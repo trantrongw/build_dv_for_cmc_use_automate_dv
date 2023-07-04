@@ -1,3 +1,3 @@
 select
     *
-from  {{ source('DWH', 'customers') }} 
+from  {{ source('DWH', 'Staging__CMIS_dbo_customers') }} 
