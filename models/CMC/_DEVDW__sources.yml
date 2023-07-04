@@ -1,0 +1,139 @@
+version: 2
+
+sources:
+  - name: DWH
+    database: DEV_CMIS_DWH
+    schema: dbo
+    tables:
+      - name: V_Dim_Invoice
+        description: >
+                      ? 
+                      Module: DW
+      - name: Opportunities
+        description: >
+                      Danh sách mã vụ việc 
+                      Module: Kinh doanh
+      - name: V_MVV_LEFTJOIN_ORDERDETAIL_CONTRACTDETAIL
+        description: >
+                      ? 
+                      Module: DW
+      - name: V_MVV_LEFTJOIN_ORDERDETAIL_CONTRACTDETAIL_SUM
+        description: >
+                      ? 
+                      Module: DW
+      - name: V_MVV_QT_DT_PA_V2
+        description: >
+                      TH MVVCQ=0 : 
+                      - Giá trị trước thuế của SPDV theo đơn hàng: (OrderDetails.TotalBeforeVAT 
+                        or ContractDetails.TotalBeforeVAT) 
+                      -	Tỷ lệ Lãi thuần của MVV:  select TyLeLaiThuan from V_MVV_QT_DT_PA_V2
+                      TH MVVCQ=1: 
+                      - Giá trị trước thuế của SPDV theo đơn hàng: (OrderDetails.TotalBeforeVAT 
+                        or ContractDetails.TotalBeforeVAT) 
+                      -	Tỷ lệ Lãi thuần của MVV:  select TyLeLaiThuan from V_MVV_QT_DT_PA_V2 
+                      Module: CMIS
+      - name: V_CONTRACT_LOCK
+        escription: >
+                      Lấy ngày khóa HĐ mới nhất trong khung thời gian được chọn của HĐ theo MVV 
+                      Module: CMIS : Code Logic
+      - name: Dim_Date
+        description: >
+                      Thông tin thời gian 
+                      Module: DW
+      - name: Groups
+        description: >
+                      Danh sách bộ phận/phòng ban 
+                      Module: CMIS: Cơ cấu tổ chức
+      - name: GroupHistories
+        description: >
+                      Lịch sử thay đổi bộ phận 
+                      Module: CMIS: Cơ cấu tổ chức
+      - name: V_XHD_CHITIET_V2
+        description: '{{ doc("V_XHD_CHITIET_V2") }}'
+      - name: ct00
+        description: >
+                      Sổ cái
+                      Module: GL
+                      DB: FAST
+      - name: Orders
+        description: >
+                      Đơn hàng
+                      Module: Kinh doanh
+      - name: OrderDetails
+        description: >
+                      Đơn hàng - Chi tiết SPDV
+                      Module: Kinh doanh
+      - name: Contracts
+        description: >
+                      Phiếu Hợp đồng
+                      Module: Kinh doanh
+      - name: ContractDetails
+        description: '{{ doc("ContractDetails") }}'
+      - name: V_MVV_QT_DT_PA_ChiTietV2
+        description: >
+                      ? 
+                      Module: DW
+      - name: EstimateContracts
+        description: >
+                      Dự toán hợp đồng
+                      Module: Kinh doanh
+      - name: FinalizationContracts
+        description: >
+                      Phiếu Quyết toán hợp đồng
+                      Module: Kinh doanh
+      - name: BusinessPlans
+        description: >
+                      PAKD: Phương án kinh doanh
+                      Module: Phương án kinh doanh
+      - name: Estimates
+        description: >
+                      Phiếu Dự toán (DTTV, DTPATK, DTTK)
+                      + DTTK: Dự toán triển khai
+                      + DTTV: Dự toán tư vấn
+                      + DTPATK: Dự toán phương án triển khai
+                      Module: Dự toán
+      - name: FinalizationEstimates
+        description: >
+                      Phiếu Quyết toán triển khai (QTTK)
+                      Module: Quyết toán triển khai
+      - name: ContractLockStatus
+        description: >
+                      Lịch sử mở/khóa hợp đồng
+                      Module: Kinh doanh
+      - name: ContractLockTypes
+        description: >
+                      Trạng thái mở/khóa hợp đồng
+                      Module: Kinh doanh
+      - name: customers
+        description: >
+                      Danh sách khách hàng
+                      Module: CMIS - Khách hàng
+      - name: CustomerTypes
+        description: >
+                      Phân loại khách hàng theo trạng thái
+                      Module: CMIS - Khách hàng
+      - name: industrytypes
+        description: >
+                      Danh mục Industry
+                      Module: CMIS - Khách hàng
+      - name: environmenttypes
+        description: >
+                      Danh mục Thị trường (khách hàng)
+                      Module: CMIS - Master data
+      - name: usercustomers
+        description: >
+                      Thông tin NVKD phụ trách KH (AM, Sub)
+                      Module: CMIS - Kinh doanh - Khách hàng
+      - name: Users
+        description: >
+                      Danh sách nhân viên
+                      Module: CMIS - Master data
+      - name: Titles
+        description: >
+                      Danh mục chức danh
+                      Module: CMIS - Master data
+   
+      
+  
+
+      
