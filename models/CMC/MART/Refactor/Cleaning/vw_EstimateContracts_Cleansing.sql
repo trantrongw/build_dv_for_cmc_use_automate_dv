@@ -1,6 +1,6 @@
 {{ config(materialized='ephemeral') }}
 select 
     OpportunityID,
-    profit
+    Profit
 from {{ source("DWH", "Staging__CMIS_dbo_EstimateContracts") }} ec
-where ec.activate = 1 and ec.publishtype != 2 and WFIsFinish = 1
+where ec.Activate = 1 and ec.PublishType != 2 and WFIsFinish = 1

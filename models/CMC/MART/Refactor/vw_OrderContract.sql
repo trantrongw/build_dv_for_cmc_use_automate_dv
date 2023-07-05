@@ -1,17 +1,17 @@
 SELECT DISTINCT
-       opp.ID AS opportunityid,
-       opp.Code AS opportunityCode,
-       COALESCE(ord.orderid, con.contractid) AS orderid,
-       COALESCE(ord.orderdetailid, con.contractdetailid) AS orderdetailid,
-       COALESCE(ord.totalbeforevat, con.totalbeforevat) AS totalbeforevat,
-       COALESCE(lok.total, ord.sumtotalbeforevat, con.sumtotalbeforevat) AS sumtotalbeforevat,
-       COALESCE(ord.perc,con.perc) AS Perc,
-       COALESCE(ord.perc,con.perc) * lok.total AS Allocation,
-       lok.lockdate ngayghinhandoanhso
+       opp.ID AS OpportunityID,
+       opp.Code AS OpportunityCode,
+       COALESCE(ord.OrderID, con.ContractID) AS OrderID,
+       COALESCE(ord.OrderDetailID, con.ContractDetailID) AS OrderDetailID,
+       COALESCE(ord.TotalBeforeVAT, con.TotalBeforeVAT) AS TotalBeforeVAT,
+       COALESCE(lok.Total, ord.SUMTotalBeforeVAT, con.SUMTotalBeforeVAT) AS SUMTotalBeforeVAT,
+       COALESCE(ord.PERC,con.PERC) AS PERC,
+       COALESCE(ord.PERC,con.PERC) * lok.Total AS Allocation,
+       lok.LockDate ngayghinhandoanhso
 FROM {{ source("DWH", "Staging__CMIS_dbo_Opportunities") }} opp
     LEFT JOIN {{ ref("vw_Orders_Cleansing") }} ord
-        ON ord.opportunityid = opp.ID
+        ON ord.OpportunityID = opp.ID
     LEFT JOIN {{ ref("vw_Contracts_Cleansing") }} con
-        ON con.opportunityid = opp.ID
+        ON con.OpportunityID = opp.ID
     LEFT JOIN {{ ref("vw_ContractLockStatus_Cleaning") }} lok
-        ON con.contractid = lok.contractid
+        ON con.ContractID = lok.ContractID

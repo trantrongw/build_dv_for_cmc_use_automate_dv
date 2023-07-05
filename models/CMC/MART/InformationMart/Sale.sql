@@ -8,7 +8,7 @@ SELECT CONVERT(VARCHAR(32),
                                            
                                             ,C.CustomerID
                                         )
-                           )
+                           ),2
               ) AS _KEY_SALE,
        C.ID AS _KEY_OPP,
        C.SaleManID AS _KEY_EMPLOYEE,

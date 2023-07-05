@@ -1,20 +1,22 @@
 {{ config(materialized='table') }}
 SELECT 
-	   CONVERT(
-                  VARCHAR(32),
-                  HASHBYTES('MD5',CONCAT_WS('$',C.SaleManID,C.GroupID,D.TheFirstOfQuarter,IIF(B.SolutionBranchID%2=1,10671,10816)))
-              ) AS _KEY_PLAN,	
+	   CONVERT(VARCHAR(32), HASHBYTES('MD5', NULLIF(CONCAT(
+        ISNULL(NULLIF(UPPER(TRIM(CAST(C.SaleManID AS VARCHAR(MAX)))), ''), '^^'), '||',
+        ISNULL(NULLIF(UPPER(TRIM(CAST(C.GroupID AS VARCHAR(MAX)))), ''), '^^'), '||',
+        ISNULL(NULLIF(UPPER(TRIM(CAST(D.TheFirstOfQuarter AS VARCHAR(MAX)))), ''), '^^'), '||',
+        ISNULL(NULLIF(UPPER(TRIM(CAST(IIF(B.SolutionBranchID%2=1,10671,10816) AS VARCHAR(MAX)))), ''), '^^')
+    ), '^^||^^||^^||^^')), 2) AS  _KEY_PLAN,	
 	   C.SaleManID AS _KEY_EMPLOYEE,
 	   C.GroupID AS _KEY_DEPARTMENT,
        D.TheFirstOfQuarter AS _KEY_SALE_DATE, 
        IIF(B.SolutionBranchID%2=1,10671,10816) AS _KEY_SOLUTION,
        CAST(SUM(B.TotalBeforeVAT) AS BIGINT) AS Amount
-FROM dbo.Orders A
-    INNER JOIN dbo.OrderDetails B
+FROM dbo.Staging__CMIS_dbo_Orders A
+    INNER JOIN dbo.Staging__CMIS_dbo_OrderDetails B
         ON A.ID = B.OrderID
-    INNER JOIN dbo.Opportunities C
+    INNER JOIN dbo.Staging__CMIS_dbo_Opportunities C
         ON A.OpportunityID = C.ID
-	INNER JOIN dbo.Dim_Date D ON CAST(A.CreatedDate AS DATE ) = CAST(D.Date_Key	 AS DATE )
+	INNER JOIN dbo.Staging__CMIS_dbo_Dim_Date D ON CAST(A.CreatedDate AS DATE ) = CAST(D.Date_Key	 AS DATE )
 GROUP BY C.SaleManID,
 	C.GroupID,
        D.TheFirstOfQuarter,

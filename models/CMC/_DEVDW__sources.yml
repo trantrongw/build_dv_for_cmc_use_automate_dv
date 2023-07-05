@@ -67,7 +67,7 @@ sources:
         description: >
                       Trạng thái mở/khóa hợp đồng
                       Module: Kinh doanh
-      - name: Staging__CMIS_dbo_customers
+      - name: Staging__CMIS_dbo_Customers
         description: >
                       Danh sách khách hàng
                       Module: CMIS - Khách hàng
@@ -75,15 +75,15 @@ sources:
         description: >
                       Phân loại khách hàng theo trạng thái
                       Module: CMIS - Khách hàng
-      - name: Staging__CMIS_dbo_industrytypes
+      - name: Staging__CMIS_dbo_IndustryTypes
         description: >
                       Danh mục Industry
                       Module: CMIS - Khách hàng
-      - name: Staging__CMIS_dbo_environmenttypes
+      - name: Staging__CMIS_dbo_EnvironmentTypes
         description: >
                       Danh mục Thị trường (khách hàng)
                       Module: CMIS - Master data
-      - name: Staging__CMIS_dbo_usercustomers
+      - name: Staging__CMIS_dbo_UserCustomers
         description: >
                       Thông tin NVKD phụ trách KH (AM, Sub)
                       Module: CMIS - Kinh doanh - Khách hàng
@@ -94,6 +94,10 @@ sources:
       - name: Staging__CMIS_dbo_Titles
         description: >
                       Danh mục chức danh
+                      Module: CMIS - Master data
+      - name: Staging__CMIS_dbo_OpportunityStatus
+        description: >
+                      Trạng thái cơ hội
                       Module: CMIS - Master data
    
       

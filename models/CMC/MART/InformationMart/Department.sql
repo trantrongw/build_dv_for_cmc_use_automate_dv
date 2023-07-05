@@ -3,4 +3,4 @@ select
     A.GroupCode as [Department Code],
     A.GroupName as [Department Name]
 from {{ source('DWH', 'Staging__CMIS_dbo_Groups') }}  A 
-where A.isactive = 1 and A.IsVirtual=0 
+where A.IsActive = 1 and A.IsVirtual=0 

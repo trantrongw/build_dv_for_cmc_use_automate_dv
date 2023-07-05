@@ -2,7 +2,7 @@ SELECT
        CONVERT(
             VARCHAR(32),
             HASHBYTES('MD5', CONCAT_WS('$', C.ID, C.SaleManID, C.GroupID, CAST(E.LockDate AS DATE), b.SolutionBranchID))
-              )AS _KEY_PROFIT,
+              ,2)AS _KEY_PROFIT,
        C.ID AS _KEY_OPP,
        C.SaleManID AS _KEY_EMPLOYEE,
        C.GroupID AS _KEY_DEPARTMENT,

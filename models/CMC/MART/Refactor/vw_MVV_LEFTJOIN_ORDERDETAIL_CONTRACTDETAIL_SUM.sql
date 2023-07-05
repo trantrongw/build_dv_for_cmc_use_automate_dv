@@ -1,25 +1,24 @@
 select 
-    a.opportunityid,a.opportunitycode
-    , a.orderid,a.contractid
-    , a.sumtotalbeforevatdetail
-    , coalesce(b.total,sumtotalbeforevatdetail) as sumtotalbeforevat
-    , b.lockdate as ngayghinhandoanhso
-    , b.total as gthdkhoa
+    a.OpportunityID,a.OpportunityCode
+    , a.OrderID,a.ContractID
+    , coalesce(b.Total,SUMTotalBeforeVAT) as SUMTotalBeforeVAT
+    , b.LockDate as ngayghinhandoanhso
+    , b.Total as gthdkhoa
     ,a.RN
 from
     (
         select
-            ord.opportunityid,
-            ord.opportunitycode,
-            ord.orderid,
-            ord.contractid,
-            sum(ord.totalbeforevat) as sumtotalbeforevatdetail,
+            ord.OpportunityID,
+            ord.OpportunityCode,
+            ord.OrderID,
+            ord.ContractID,
+            sum(ord.TotalBeforeVAT) as SUMTotalBeforeVAT,
             count(*) as RN
         from {{ ref("vw_MVV_LEFTJOIN_ORDERDETAIL_CONTRACTDETAIL") }} ord
-        group by ord.opportunityid, ord.opportunitycode, ord.orderid,ord.contractid
+        group by ord.OpportunityID, ord.OpportunityCode, ord.OrderID,ord.ContractID
     ) a
 left join
     {{ ref("vw_ContractLockStatus_Cleaning") }} b
-    on a.contractid = b.contractid
+    on a.ContractID = b.ContractID
 
 

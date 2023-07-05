@@ -17,7 +17,7 @@ AS (SELECT OpportunityCode,
 SELECT A.OpportunityCode,
        A.INVOICE_DATE,
        A.TongXuatHD,
-       A.TongXuatHD / NULLIF(B.sum_tongxuathd, 0) AS Perc
+       A.TongXuatHD / NULLIF(B.sum_tongxuathd, 0) AS PERC
 FROM __dbt__cte__vw_XHD_TongHop A
     INNER JOIN __dbt__cte__vw_XHD_SumMVV B
         ON B.OpportunityCode = A.OpportunityCode;

@@ -9,4 +9,4 @@ select
     a.BeginWorkDate,
     b.Name as titles
 from {{ source("DWH", "Staging__CMIS_dbo_Users") }} a
-left join {{ source("DWH", "Staging__CMIS_dbo_Titles") }} b on a.TitleId = b.id
+left join {{ source("DWH", "Staging__CMIS_dbo_Titles") }} b on a.TitleID = b.ID
