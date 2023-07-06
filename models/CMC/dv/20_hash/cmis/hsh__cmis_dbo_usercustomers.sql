@@ -8,15 +8,15 @@ derived_columns:
   dv_tenant_id: '!default'
   dv_collisioncode: '!default'
 hashed_columns: 
-    dv_hash_key_customer:
+    dv_hash_key_hub_customer:
     - dv_tenant_id
     - dv_collisioncode
     - customer_code
-    dv_hash_key_user:
+    dv_hash_key_hub_user:
     - dv_tenant_id
     - dv_collisioncode
     - user_code
-    dv_hash_key_usercustomer:
+    dv_hash_key_lnk_usercustomer:
     - dv_tenant_id
     - dv_collisioncode
     - user_code

@@ -8,14 +8,21 @@ derived_columns:
   dv_tenant_id: '!default'
   dv_collisioncode: '!default'
 hashed_columns: 
-    dv_hash_key_customer1:
+    dv_hash_key_huh_customer1:
     - dv_tenant_id
     - dv_collisioncode
     - customer_code1
-    dv_hash_key_customer2:
+    dv_hash_key_huh_customer2:
     - dv_tenant_id
     - dv_collisioncode
     - customer_code2
+    dv_hashdiff_sat_customer:
+      is_hashdiff: true
+      columns:
+        - [Name]
+        - [Address]
+        - [Phone]
+        - [Email]
 {%- endset -%}
 
 {% set metadata_dict = fromyaml(yaml_metadata) %}
