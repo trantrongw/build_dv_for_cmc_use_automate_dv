@@ -69,24 +69,46 @@ sources:
                       Module: Kinh doanh
       - name: Staging__CMIS_dbo_Customers
         description: >
-                      Danh sách khách hàng
-                      Module: CMIS - Khách hàng
+                      Danh sách khách hàng.
+                      Module: CMIS - Khách hàng.
+                      ID, Code được đưa vào HUB còn các thuộc tính còn lại đưa vào SAT
+        columns:
+          - name: ID
+            description: >
+              Mã tự tăng của khách hàng, liên kết nội bộ trong DB.
+              Được sử dụng để Hash vào HUB_CUSTOMER
+          - name: Code
+            description: >
+              Mã khách hàng theo quy tắc là duy nhất nhưng hiện đang phát hiện trùng.
+              Được sử dụng để Hash vào HUB_CUSTOMER
       - name: Staging__CMIS_dbo_CustomerTypes
         description: >
                       Phân loại khách hàng theo trạng thái
-                      Module: CMIS - Khách hàng
+                      Module: CMIS - Khách hàng.
+                      Đưa vào Ref (ID là PK)
       - name: Staging__CMIS_dbo_IndustryTypes
         description: >
                       Danh mục Industry
                       Module: CMIS - Khách hàng
+                      Đưa vào REF_ (ID là PK)
       - name: Staging__CMIS_dbo_EnvironmentTypes
         description: >
                       Danh mục Thị trường (khách hàng)
                       Module: CMIS - Master data
+                      Đưa vào Ref (ID là PK)
       - name: Staging__CMIS_dbo_UserCustomers
         description: >
                       Thông tin NVKD phụ trách KH (AM, Sub)
                       Module: CMIS - Kinh doanh - Khách hàng
+                      Nhân viên nào đang hỗ trợ cho khách hàng nào
+        columns:
+          - name: UserID
+            description: >
+              Mã nhân viên (quản lý nội tại trong CMIS) 
+              Sử dụng để đưa vào LNK_USERCUSTOMER
+          - name: CustomerID
+            description: >
+              Mã khách (quản lý nội tại trong CMIS) 
       - name: Staging__CMIS_dbo_Users
         description: >
                       Danh sách nhân viên

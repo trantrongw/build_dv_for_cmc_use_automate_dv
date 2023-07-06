@@ -1,0 +1,5 @@
+version: 2
+
+models:
+  - name: Staging__CMIS_dbo_Customers
+    description: view trung gian

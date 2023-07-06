@@ -40,5 +40,13 @@ vars:
 models:
   build_dv_for_cmc_use_automate_dv:
     # Config indicated by + and applies to all files under models/example/
-    example:
-      +materialized: view
+    CMC:
+      DATAVAULT:
+        10_STAGE:
+          +materialized: ephemeral
+        20_HASH:
+          +materialized: view
+        30_HUB:
+          +materialized: incremental
+        40_LNK:
+          +materialized: incremental
