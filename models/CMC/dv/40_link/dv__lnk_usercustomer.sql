@@ -1,6 +1,6 @@
 {%- set yaml_metadata -%}
 source_model: 
-  - hsh__cmis_dbo_usercustomers
+  - hash__cmis_dbo_usercustomers
 src_pk: dv_hash_key_lnk_usercustomer
 src_fk: 
   - dv_hash_key_hub_user

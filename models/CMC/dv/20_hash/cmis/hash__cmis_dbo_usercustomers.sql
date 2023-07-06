@@ -1,28 +1,26 @@
 {%- set yaml_metadata -%}
-source_model: stg__cmis_dbo_customers
+source_model: stg__cmis_dbo_usercustomers
 derived_columns:
   dv_recordsource: DV_RECORD_SOURCE
-  dv_load_timestamp: cast( DV_APPLIED_DATE as DATETIME)
-  customer_code1: ID
-  customer_code2: Code
+  dv_load_timestamp: cast( DV_APPLIED_DATE as DATETIME2(6))
+  user_code: CustomerID
+  customer_code: UserID
   dv_tenant_id: '!default'
   dv_collisioncode: '!default'
 hashed_columns: 
-    dv_hash_key_huh_customer1:
+    dv_hash_key_hub_customer:
     - dv_tenant_id
     - dv_collisioncode
-    - customer_code1
-    dv_hash_key_huh_customer2:
+    - customer_code
+    dv_hash_key_hub_user:
     - dv_tenant_id
     - dv_collisioncode
-    - customer_code2
-    dv_hashdiff_sat_customer:
-      is_hashdiff: true
-      columns:
-        - [Name]
-        - [Address]
-        - [Phone]
-        - [Email]
+    - user_code
+    dv_hash_key_lnk_usercustomer:
+    - dv_tenant_id
+    - dv_collisioncode
+    - user_code
+    - customer_code
 {%- endset -%}
 
 {% set metadata_dict = fromyaml(yaml_metadata) %}
