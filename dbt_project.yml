@@ -43,7 +43,7 @@ models:
     cmc:
       dv:
         10_staging:
-          +materialized: ephemeral
+          +materialized: view
         20_hash:
           +materialized: view
         30_hub:
@@ -51,4 +51,6 @@ models:
         40_link:
           +materialized: incremental
         50_satellite:
+          +materialized: incremental
+        60_reference:
           +materialized: incremental

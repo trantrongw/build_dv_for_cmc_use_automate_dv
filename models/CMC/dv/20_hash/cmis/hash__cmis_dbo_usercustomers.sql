@@ -7,6 +7,7 @@ derived_columns:
   customer_code: UserID
   dv_tenant_id: '!default'
   dv_collisioncode: '!default'
+  dv_depc_sat_lnk_usercustomer: ID
 hashed_columns: 
     dv_hash_key_hub_customer:
     - dv_tenant_id
@@ -21,6 +22,11 @@ hashed_columns:
     - dv_collisioncode
     - user_code
     - customer_code
+    dv_hashdiff_sat_lnk_usercustomer:
+      is_hashdiff: true
+      columns:
+        - AccountType
+        - Activate
 {%- endset -%}
 
 {% set metadata_dict = fromyaml(yaml_metadata) %}
