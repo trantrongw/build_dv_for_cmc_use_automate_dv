@@ -6,6 +6,7 @@ src_cdk:
 src_payload:
   - 'AccountType'
   - 'Activate'
+  - 'GroupID' 
 src_hashdiff: 'dv_hashdiff_sat_lnk_usercustomer'
 src_ldts: 'dv_load_timestamp'
 src_source: 'dv_recordsource'
