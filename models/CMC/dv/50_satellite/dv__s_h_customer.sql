@@ -1,7 +1,7 @@
 {%- set yaml_metadata -%}
-source_model: "hash__cmis_dbo_customers_id"
-src_pk: "dv_hash_key_J_customer"
-src_hashdiff: "dv_hashdiff_sat_h_customer"
+source_model: "hash__cmis_dbo_customers"
+src_pk: "dv_hash_key_h_customer"
+src_hashdiff: "dv_hashdiff_s_h_customer"
 src_payload:
   - "Name"
   - "Address"
@@ -12,7 +12,6 @@ src_source: "dv_recordsource"
 {%- endset -%}
 
 {% set metadata_dict = fromyaml(yaml_metadata) %}
-
 {{ automate_dv.sat(src_pk=metadata_dict["src_pk"],
                    src_hashdiff=metadata_dict["src_hashdiff"],
                    src_payload=metadata_dict["src_payload"],

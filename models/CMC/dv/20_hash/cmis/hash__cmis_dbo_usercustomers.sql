@@ -7,7 +7,7 @@ derived_columns:
   customer_code: "UserID"
   dv_tenant_id: "!default"
   dv_collisioncode: "!default"
-  dv_depc_sat_lnk_usercustomer: "ID"
+  dv_cdk_l_user_customer: "ID"
 hashed_columns: 
     dv_hash_key_h_customer:
     - "dv_tenant_id"
@@ -17,17 +17,22 @@ hashed_columns:
     - "dv_tenant_id"
     - "dv_collisioncode"
     - "user_code"
-    dv_hash_key_l_usercustomer:
+    dv_hash_key_l_user_customer:
     - "dv_tenant_id"
     - "dv_collisioncode"
     - "user_code"
     - "customer_code"
-    dv_hashdiff_s_user_customer:
+    - "dv_cdk_l_user_customer"
+    dv_hashdiff_s_l_user_customer:
       is_hashdiff: true
       columns:
         - "AccountType"
         - "Activate"
         - "GroupID" 
+    dv_hashdiff_s_l_user_customer_rt:
+      is_hashdiff: true
+      columns:
+        - "DV_APPLIED_DATE"
 {%- endset -%}
 
 {% set metadata_dict = fromyaml(yaml_metadata) %}
