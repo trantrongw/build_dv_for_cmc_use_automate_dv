@@ -4,6 +4,7 @@ derived_columns:
   dv_recordsource: "DV_RECORD_SOURCE"
   dv_load_timestamp: cast( DV_APPLIED_DATE as DATETIME2(6))
   customer_code: cast(ID as VARCHAR(8000))
+  customer_code2: cast(Code as VARCHAR(8000))
   dv_tenant_id: '!default'
   dv_collisioncode: '!default'
 hashed_columns: 
@@ -11,6 +12,10 @@ hashed_columns:
     - "dv_tenant_id"
     - "dv_collisioncode"
     - "customer_code"
+    dv_hash_key_h_customer2:
+    - "dv_tenant_id"
+    - "dv_collisioncode"
+    - "customer_code2"
     dv_hashdiff_s_h_customer:
       is_hashdiff: true
       columns:
