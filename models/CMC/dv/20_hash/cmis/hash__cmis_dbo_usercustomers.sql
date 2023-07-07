@@ -1,32 +1,33 @@
 {%- set yaml_metadata -%}
-source_model: stg__cmis_dbo_usercustomers
+source_model: "stg__cmis_dbo_usercustomers"
 derived_columns:
-  dv_recordsource: DV_RECORD_SOURCE
-  dv_load_timestamp: cast( DV_APPLIED_DATE as DATETIME2(6))
-  user_code: CustomerID
-  customer_code: UserID
-  dv_tenant_id: '!default'
-  dv_collisioncode: '!default'
-  dv_depc_sat_lnk_usercustomer: ID
+  dv_recordsource: "DV_RECORD_SOURCE"
+  dv_load_timestamp: cast( [DV_APPLIED_DATE] as DATETIME2(6))
+  user_code: "CustomerID"
+  customer_code: "UserID"
+  dv_tenant_id: "!default"
+  dv_collisioncode: "!default"
+  dv_depc_sat_lnk_usercustomer: "ID"
 hashed_columns: 
-    dv_hash_key_hub_customer:
-    - dv_tenant_id
-    - dv_collisioncode
-    - customer_code
-    dv_hash_key_hub_user:
-    - dv_tenant_id
-    - dv_collisioncode
-    - user_code
-    dv_hash_key_lnk_usercustomer:
-    - dv_tenant_id
-    - dv_collisioncode
-    - user_code
-    - customer_code
-    dv_hashdiff_sat_lnk_usercustomer:
+    dv_hash_key_h_customer:
+    - "dv_tenant_id"
+    - "dv_collisioncode"
+    - "customer_code"
+    dv_hash_key_h_user:
+    - "dv_tenant_id"
+    - "dv_collisioncode"
+    - "user_code"
+    dv_hash_key_l_usercustomer:
+    - "dv_tenant_id"
+    - "dv_collisioncode"
+    - "user_code"
+    - "customer_code"
+    dv_hashdiff_s_user_customer:
       is_hashdiff: true
       columns:
-        - AccountType
-        - Activate
+        - "AccountType"
+        - "Activate"
+        - "GroupID" 
 {%- endset -%}
 
 {% set metadata_dict = fromyaml(yaml_metadata) %}

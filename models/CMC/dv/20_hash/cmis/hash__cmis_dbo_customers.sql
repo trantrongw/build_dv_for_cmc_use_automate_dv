@@ -1,22 +1,22 @@
 {%- set yaml_metadata -%}
-source_model: stg__cmis_dbo_customers
+source_model: "stg__cmis_dbo_customers"
 derived_columns:
-  dv_recordsource: DV_RECORD_SOURCE
+  dv_recordsource: "DV_RECORD_SOURCE"
   dv_load_timestamp: cast( DV_APPLIED_DATE as DATETIME2(6))
   customer_code1: cast(ID as VARCHAR(50))
   customer_code2: cast(Code as VARCHAR(50))
   dv_tenant_id: '!default'
   dv_collisioncode: '!default'
 hashed_columns: 
-    dv_hash_key_huh_customer1:
-    - dv_tenant_id
-    - dv_collisioncode
-    - customer_code1
-    dv_hash_key_huh_customer2:
-    - dv_tenant_id
-    - dv_collisioncode
-    - customer_code2
-    dv_hashdiff_sat_hub_customer:
+    dv_hash_key_h_customer1:
+    - "dv_tenant_id"
+    - "dv_collisioncode"
+    - "customer_code1"
+    dv_hash_key_h_customer2:
+    - "dv_tenant_id"
+    - "dv_collisioncode"
+    - "customer_code2"
+    dv_hashdiff_sat_h_customer:
       is_hashdiff: true
       columns:
         - "Name"

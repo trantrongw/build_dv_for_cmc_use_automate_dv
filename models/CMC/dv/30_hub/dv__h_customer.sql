@@ -1,14 +1,14 @@
 {%- set yaml_metadata -%}
 source_model: 
-    - hash__cmis_dbo_customers_id
-    - hash__cmis_dbo_customers_code
-src_pk: dv_hash_key_customer
-src_nk: customer_code
-src_ldts: dv_load_timestamp
-src_source: dv_recordsource
+    - "hash__cmis_dbo_customers_id"
+    - "hash__cmis_dbo_customers_code"
+src_pk: "dv_hash_key_h_customer"
+src_nk: "customer_code"
+src_ldts: "dv_load_timestamp"
+src_source: "dv_recordsource"
 src_extra_columns:
-    - dv_tenant_id
-    - dv_collisioncode
+    - "dv_tenant_id"
+    - "dv_collisioncode"
 {%- endset -%}
 
 {% set metadata_dict = fromyaml(yaml_metadata) %}

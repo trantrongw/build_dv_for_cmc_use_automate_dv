@@ -1,5 +1,5 @@
 select 
-  dv_hash_key_huh_customer1 as dv_hash_key_customer, 
+  dv_hash_key_h_customer1 as dv_hash_key_h_customer, 
   customer_code1 as customer_code,
   *
 FROM
