@@ -1,8 +1,8 @@
 {%- set yaml_metadata -%}
 source_model: 
-    - "hash__cmis_dbo_customers"
-src_pk: "dv_hash_key_h_customer"
-src_nk: "customer_code"
+    - "hash__cmis_dbo_groups"
+src_pk: "dv_hash_key_h_department"
+src_nk: "department_code"
 src_ldts: "dv_load_timestamp"
 src_source: "dv_recordsource"
 src_extra_columns:
