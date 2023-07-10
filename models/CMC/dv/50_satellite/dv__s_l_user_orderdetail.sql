@@ -1,5 +1,5 @@
 {%- set yaml_metadata -%}
-source_model: "hash__cmis_dbo_OrderDetails"
+source_model: "hash__cmis_dbo_orderdetails"
 src_pk: 
   - "dv_hash_key_l_orderdetail"
 src_payload:

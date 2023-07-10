@@ -1,5 +1,5 @@
 {%- set yaml_metadata -%}
-source_model: "stg__cmis_dboOrderDetails"
+source_model: "stg__cmis_dbo_orderdetails"
 derived_columns:
   dv_recordsource: "DV_RECORD_SOURCE"
   dv_load_timestamp: cast( DV_APPLIED_DATE as DATETIME2(6))
@@ -13,6 +13,10 @@ hashed_columns:
     - "dv_tenant_id"
     - "dv_collisioncode"
     - "order_code"
+    dv_hash_key_h_solution:
+    - "dv_tenant_id"
+    - "dv_collisioncode"
+    - "solution_code"
     dv_hash_key_l_orderdetail:
     - "dv_tenant_id"
     - "dv_collisioncode"
