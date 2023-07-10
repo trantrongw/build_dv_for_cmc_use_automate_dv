@@ -25,6 +25,7 @@ hashed_columns:
         - "[IsDeleted]"
         - "[ParentID]"
         - "[BusinessOpportunityID]"
+        - "[CreatedDate]"
 {%- endset -%}
 
 {% set metadata_dict = fromyaml(yaml_metadata) %}
