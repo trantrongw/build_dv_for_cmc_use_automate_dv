@@ -1,7 +1,7 @@
 {%- set yaml_metadata -%}
-source_model: "hash__cmis_dbo_orders"
-src_pk: "dv_hash_key_h_order"
-src_hashdiff: "dv_hashdiff_s_h_order"
+source_model: "hash__cmis_dbo_contracts"
+src_pk: "dv_hash_key_h_contract"
+src_hashdiff: "dv_hashdiff_s_h_contract"
 src_payload:
   - "[Activate]"
 src_ldts: "dv_load_timestamp"

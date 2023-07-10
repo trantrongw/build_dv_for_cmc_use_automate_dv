@@ -24,28 +24,7 @@ hashed_columns:
     dv_hashdiff_s_h_order:
       is_hashdiff: true
       columns:
-        - "[ID]"
-        - "[Code]"
-        - "[Tag]"
-        - "[CustomerID]"
-        - "[TotalBeforeVAT]"
-        - "[ValueHardware]"
-        - "[TotalVAT]"
-        - "[TotalAfterVAT]"
-        - "[PublishType]"
-        - "[CreatedDate]"
-        - "[CreatedByID]"
-        - "[CreatedByName]"
-        - "[ModifiedByName]"
-        - "[IsPaymentGuarantee]"
         - "[Activate]"
-        - "[RevenueSerial]"
-        - "[TimeContractSerial]"
-        - "[ProductName]"
-        - "[OpportunityID]"
-        - "[BOKinds]"
-        - "[RetailTypeID]"
-        - "[WarrantyID]"
 {%- endset -%}
 
 {% set metadata_dict = fromyaml(yaml_metadata) %}

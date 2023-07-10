@@ -1,11 +1,11 @@
 {%- set yaml_metadata -%}
-source_model: "hash__cmis_dbo_orderdetails"
+source_model: "hash__cmis_dbo_contractlockstatus"
 src_pk: 
-  - "dv_hash_key_l_orderdetail"
+  - "dv_hash_key_l_contractlockstatus"
 src_payload:
-    - "[TotalBeforeVAT]"
-    - "[IsMain]"
-src_hashdiff: "dv_hashdiff_s_l_orderdetail"
+  - "[IsLock]"
+  - "[LockDate]"
+src_hashdiff: "dv_hashdiff_s_l_contractlockstatus"
 src_ldts: "dv_load_timestamp"
 src_source: "dv_recordsource"
 {%- endset -%}

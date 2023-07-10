@@ -6,8 +6,6 @@ src_payload:
   - "[ngay_ct]"
   - "[ps_co]"
   - "[ps_no]"
-  - "[ma_vv]"
-  - "[line_nbr]"
 src_hashdiff: "dv_hashdiff_s_l_opportunity"
 src_ldts: "dv_load_timestamp"
 src_source: "dv_recordsource"
