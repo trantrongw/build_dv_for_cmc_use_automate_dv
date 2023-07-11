@@ -1,10 +1,10 @@
 {%- set yaml_metadata -%}
-source_model: "stg__cmis_dbo_businessplans"
+source_model: "stg__cmis_dbo_estimatecontracts"
 derived_columns:
   dv_recordsource: "DV_RECORD_SOURCE"
   dv_load_timestamp: cast( DV_APPLIED_DATE as DATETIME2(6))
   opportunity_code: cast([OpportunityID] as VARCHAR(8000))
-  businessplan_code: cast([ID] as VARCHAR(8000))
+  estimatecontract_code: cast([ID] as VARCHAR(8000))
   dv_tenant_id: '!default'
   dv_collisioncode: '!default'
 hashed_columns: 
@@ -12,16 +12,16 @@ hashed_columns:
     - "dv_tenant_id"
     - "dv_collisioncode"
     - "opportunity_code"
-    dv_hash_key_h_businessplan:
+    dv_hash_key_h_estimatecontract:
     - "dv_tenant_id"
     - "dv_collisioncode"
-    - "businessplan_code"
-    dv_hash_key_l_opportunity_businessplan:
+    - "estimatecontract_code"
+    dv_hash_key_l_opportunity_estimatecontract:
     - "dv_tenant_id"
     - "dv_collisioncode"
     - "opportunity_code"
-    - "businessplan_code"
-    dv_hashdiff_s_h_businessplan:
+    - "estimatecontract_code"
+    dv_hashdiff_s_h_estimatecontract:
       is_hashdiff: true
       columns:
         - "[Profit]"
