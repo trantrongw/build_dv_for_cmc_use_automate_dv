@@ -1,8 +1,9 @@
 {%- set yaml_metadata -%}
 source_model: 
+    - "hash__cmis_dbo_branches"
     - "hash__cmis_dbo_orderdetails"
-src_pk: "dv_hash_key_h_solution"
-src_nk: "solution_code"
+src_pk: "dv_hash_key_h_product"
+src_nk: "product_code"
 src_ldts: "dv_load_timestamp"
 src_source: "dv_recordsource"
 src_extra_columns:

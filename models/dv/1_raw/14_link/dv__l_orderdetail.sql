@@ -4,7 +4,7 @@ source_model:
 src_pk: "dv_hash_key_l_orderdetail"
 src_fk: 
   - "dv_hash_key_h_order"
-  - "dv_hash_key_h_solution"
+  - "dv_hash_key_h_product"
   - "dv_cdk_l_orderdetail"
 src_ldts: "dv_load_timestamp"
 src_source: "dv_recordsource"

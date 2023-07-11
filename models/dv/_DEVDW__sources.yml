@@ -121,6 +121,9 @@ sources:
         description: >
                       Trạng thái cơ hội
                       Module: CMIS - Master data
+      - name: Staging__CMIS_dbo_Branches
+        description: >
+                      sản phẩm của CMC
    
       
   

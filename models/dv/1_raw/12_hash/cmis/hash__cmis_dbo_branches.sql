@@ -1,33 +1,26 @@
 {%- set yaml_metadata -%}
-source_model: "stg__cmis_dbo_orderdetails"
+source_model: "stg__cmis_dbo_branches"
 derived_columns:
   dv_recordsource: "DV_RECORD_SOURCE"
   dv_load_timestamp: cast( DV_APPLIED_DATE as DATETIME2(6))
-  product_code: cast( SolutionBranchID as VARCHAR(4000))
-  order_code: cast(OrderID as VARCHAR(8000))
-  dv_cdk_l_orderdetail: "ID"
+  product_code: cast([ID] as VARCHAR(8000))
   dv_tenant_id: '!default'
   dv_collisioncode: '!default'
 hashed_columns: 
-    dv_hash_key_h_order:
-    - "dv_tenant_id"
-    - "dv_collisioncode"
-    - "order_code"
     dv_hash_key_h_product:
     - "dv_tenant_id"
     - "dv_collisioncode"
     - "product_code"
-    dv_hash_key_l_orderdetail:
-    - "dv_tenant_id"
-    - "dv_collisioncode"
-    - "dv_cdk_l_orderdetail"
-    - "order_code"
-    - "product_code"
-    dv_hashdiff_s_l_orderdetail:
+    dv_hashdiff_s_h_product:
       is_hashdiff: true
       columns:
-        - "[TotalBeforeVAT]"
-        - "[IsMain]"
+        - "[Code]"
+        - "[Name]"
+        - "[Description]"
+        - "[Activate]"
+        - "[IsDeleted]"
+        - "[ParentID]"
+        - "[ADN]"
 {%- endset -%}
 
 {% set metadata_dict = fromyaml(yaml_metadata) %}
