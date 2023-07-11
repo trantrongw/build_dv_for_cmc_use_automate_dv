@@ -1,5 +1,5 @@
 {%- set yaml_metadata -%}
-source_model: "hash__cmis_dbo_businessplans"
+source_model: "hash__cmis_dbo_finalizationcontracts"
 src_pk: "dv_hash_key_h_businessplan"
 src_hashdiff: "dv_hashdiff_s_h_businessplan"
 src_payload:

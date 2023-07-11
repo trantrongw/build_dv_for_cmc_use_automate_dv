@@ -25,7 +25,9 @@ hashed_columns:
       is_hashdiff: true
       columns:
         - "[Profit]"
+        - "[Status]"
         - "[Activate]"
+        - "[IsDeleted]"
         - "[PublishType]"
         - "[WFIsFinish]"
 {%- endset -%}

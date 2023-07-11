@@ -1,9 +1,15 @@
 {%- set yaml_metadata -%}
 source_model: "hash__cmis_dbo_contracts"
-src_pk: "dv_hash_key_h_contract"
-src_hashdiff: "dv_hashdiff_s_h_contract"
+src_pk: "dv_hash_key_h_finalizationcontract"
+src_hashdiff: "dv_hashdiff_s_h_finalizationcontract"
 src_payload:
+  - "[Profit]"
+  - "[FinalizationContractType]"
+  - "[ModifiedDate]"
+  - "[WFIsFinish]"
   - "[Activate]"
+  - "[IsDeleted]"
+  - "[PublishType]"
 src_ldts: "dv_load_timestamp"
 src_source: "dv_recordsource"
 {%- endset -%}
