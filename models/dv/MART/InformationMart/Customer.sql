@@ -17,7 +17,7 @@ select
     ,uc.UserID as AM
     ,IIF(uc.UserID is null, N'Không',N'Có') as [Is There Saleman] 
 from {{ source('DWH', 'Staging__CMIS_dbo_Customers') }} c
-    inner join {{ source('DWH', 'Staging__CMIS_dbo_CustomerTypes') }} ct on c.CustomerTypeID = ct.ID
+    left join {{ source('DWH', 'Staging__CMIS_dbo_CustomerTypes') }} ct on c.CustomerTypeID = ct.ID
     left join {{ source('DWH', 'Staging__CMIS_dbo_IndustryTypes') }} it on c.IndustryTypeID = it.ID
     left join {{ source('DWH', 'Staging__CMIS_dbo_EnvironmentTypes') }} et on c.EnvironmentTypeID = et.ID
     left join {{ source('DWH', 'Staging__CMIS_dbo_Customers') }} pr on pr.ID = c.ParentID

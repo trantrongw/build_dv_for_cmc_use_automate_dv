@@ -23,6 +23,10 @@ hashed_columns:
         - "Address"
         - "Phone"
         - "Email"
+        - "CustomerTypeID"
+        - "IndustryTypeID"
+        - "EnvironmentTypeID"
+        - "ParentID"
     dv_hashdiff_s_h_customer_rt:
       is_hashdiff: true
       columns:

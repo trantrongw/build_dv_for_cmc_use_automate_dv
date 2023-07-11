@@ -3,8 +3,8 @@ source_model: "stg__cmis_dbo_usercustomers"
 derived_columns:
   dv_recordsource: "DV_RECORD_SOURCE"
   dv_load_timestamp: cast( [DV_APPLIED_DATE] as DATETIME2(6))
-  user_code: "CustomerID"
-  customer_code: "UserID"
+  user_code: "UserID"
+  customer_code: "CustomerID"
   dv_tenant_id: "!default"
   dv_collisioncode: "!default"
   dv_cdk_l_user_customer: "ID"

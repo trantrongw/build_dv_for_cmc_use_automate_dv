@@ -7,6 +7,10 @@ src_payload:
   - "Address"
   - "Phone"
   - "Email"
+  - "CustomerTypeID"
+  - "IndustryTypeID"
+  - "EnvironmentTypeID"
+  - "ParentID"
 src_ldts: "dv_load_timestamp"
 src_source: "dv_recordsource"
 {%- endset -%}
