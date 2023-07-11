@@ -1,11 +1,11 @@
 {%- set yaml_metadata -%}
 source_model: 
   - "hash__cmis_dbo_ct00"
-src_pk: "dv_hash_key_l_invoice_opportunity"
+src_pk: "dv_hash_key_l_opportunity_invoice"
 src_fk: 
   - "dv_hash_key_h_opportunity"
   - "dv_hash_key_h_invoice"
-  - "dv_cdk_l_invoice_opportunity"
+  - "dv_cdk_l_opportunity_invoice"
 src_ldts: "dv_load_timestamp"
 src_source: "dv_recordsource"
 src_extra_columns:

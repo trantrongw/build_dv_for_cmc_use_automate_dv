@@ -5,7 +5,7 @@ derived_columns:
   dv_load_timestamp: cast( DV_APPLIED_DATE as DATETIME2(6))
   opportunity_code: "ma_vv" 
   invoice_code: "stt_rec" 
-  dv_cdk_l_invoice_opportunity: "line_nbr"
+  dv_cdk_l_opportunity_invoice: "line_nbr"
   dv_tenant_id: '!default'
   dv_collisioncode: '!default'
 hashed_columns: 
@@ -17,13 +17,13 @@ hashed_columns:
     - "dv_tenant_id"
     - "dv_collisioncode"
     - "invoice_code"
-    dv_hash_key_l_invoice_opportunity:
+    dv_hash_key_l_opportunity_invoice:
     - "dv_tenant_id"
     - "dv_collisioncode"
     - "invoice_code"
     - "opportunity_code"
-    - "dv_cdk_l_invoice_opportunity"
-    dv_hashdiff_s_l_opportunity:
+    - "dv_cdk_l_opportunity_invoice"
+    dv_hashdiff_s_l_opportunity_invoice:
       is_hashdiff: true
       columns:
         - "[ngay_ct]"
