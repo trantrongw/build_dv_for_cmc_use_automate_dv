@@ -22,6 +22,7 @@ hashed_columns:
       columns:
         - "[IsLock]"
         - "[LockDate]"
+        - "[ID]"
 {%- endset -%}
 
 {% set metadata_dict = fromyaml(yaml_metadata) %}

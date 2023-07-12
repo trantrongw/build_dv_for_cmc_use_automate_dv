@@ -17,7 +17,7 @@ inner join {{ ref('dv__h_opportunity') }} D ON D.dv_hash_key_h_opportunity = C.d
 inner join {{ ref('dv__l_opportunity_customer_user_department') }} E ON E.dv_hash_key_h_opportunity = D.dv_hash_key_h_opportunity
 inner join {{ ref('dv__s_bv_h_order_lastest') }} F ON F.dv_hash_key_h_order = A.dv_hash_key_h_order
 inner join Staging__CMIS_dbo_Dim_Date G  ON  CAST(G.Date_Key AS DATE ) = CAST(F.CreatedDate AS DATE ) 
-inner join {{ ref('dv__s_bv_l_user_orderdetail_lastest') }} H ON H.dv_hash_key_l_orderdetail = A.dv_hash_key_l_orderdetail
+inner join {{ ref('dv__s_bv_l_orderdetail_lastest') }} H ON H.dv_hash_key_l_orderdetail = A.dv_hash_key_l_orderdetail
 GROUP BY 
 E.dv_hash_key_h_user
 ,E.dv_hash_key_h_department

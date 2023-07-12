@@ -5,6 +5,7 @@ src_pk:
 src_payload:
   - "[IsLock]"
   - "[LockDate]"
+  - "[ID]"
 src_hashdiff: "dv_hashdiff_s_l_contract_lockstatus"
 src_ldts: "dv_load_timestamp"
 src_source: "dv_recordsource"
