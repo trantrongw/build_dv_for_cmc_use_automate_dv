@@ -25,6 +25,7 @@ hashed_columns:
       is_hashdiff: true
       columns:
         - "[Activate]"
+        - "[CreatedDate]"
 {%- endset -%}
 
 {% set metadata_dict = fromyaml(yaml_metadata) %}

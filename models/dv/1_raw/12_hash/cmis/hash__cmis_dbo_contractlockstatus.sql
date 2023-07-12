@@ -4,7 +4,7 @@ derived_columns:
   dv_recordsource: "DV_RECORD_SOURCE"
   dv_load_timestamp: cast( DV_APPLIED_DATE as DATETIME2(6))
   contract_code: cast([ContractID] as VARCHAR(8000))
-  dv_cdk_s_l_contractlockstatus: cast([ID] as VARCHAR(8000))
+  dv_cdk_s_l_contract_lockstatus: cast([ID] as VARCHAR(8000))
   dv_tenant_id: '!default'
   dv_collisioncode: '!default'
 hashed_columns: 
@@ -12,12 +12,12 @@ hashed_columns:
     - "dv_tenant_id"
     - "dv_collisioncode"
     - "contract_code"
-    dv_hash_key_l_contractlockstatus:
+    dv_hash_key_l_contract_lockstatus:
     - "dv_tenant_id"
     - "dv_collisioncode"
     - "contract_code"
-    - "dv_cdk_s_l_contractlockstatus"
-    dv_hashdiff_s_l_contractlockstatus:
+    - "dv_cdk_s_l_contract_lockstatus"
+    dv_hashdiff_s_l_contract_lockstatus:
       is_hashdiff: true
       columns:
         - "[IsLock]"

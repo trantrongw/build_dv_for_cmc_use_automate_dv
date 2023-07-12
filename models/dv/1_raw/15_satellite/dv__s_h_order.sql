@@ -4,6 +4,7 @@ src_pk: "dv_hash_key_h_order"
 src_hashdiff: "dv_hashdiff_s_h_order"
 src_payload:
   - "[Activate]"
+  - "[CreatedDate]"
 src_ldts: "dv_load_timestamp"
 src_source: "dv_recordsource"
 {%- endset -%}

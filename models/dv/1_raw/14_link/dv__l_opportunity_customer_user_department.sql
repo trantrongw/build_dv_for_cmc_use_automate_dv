@@ -1,10 +1,12 @@
 {%- set yaml_metadata -%}
 source_model: 
-  - "hash__cmis_dbo_contractlockstatus"
-src_pk: "dv_hash_key_l_contractlockstatus"
+  - "hash__cmis_dbo_opportunities"
+src_pk: "dv_hash_key_l_opportunity_customer_user_department"
 src_fk: 
-  - "dv_hash_key_h_contract"
-  - "dv_cdk_s_l_contractlockstatus"
+  - "dv_hash_key_h_opportunity"
+  - "dv_hash_key_h_customer"
+  - "dv_hash_key_h_user"
+  - "dv_hash_key_h_department"
 src_ldts: "dv_load_timestamp"
 src_source: "dv_recordsource"
 src_extra_columns:
