@@ -1,5 +1,5 @@
 select 
-	CONVERT(VARCHAR(32), HASHBYTES('MD5', NULLIF(CONCAT(
+	CONVERT(CHAR(32), HASHBYTES('MD5', NULLIF(CONCAT(
         ISNULL(NULLIF(UPPER(TRIM(CAST(E.dv_hash_key_h_user AS VARCHAR(MAX)))), ''), '^^'), '||',
         ISNULL(NULLIF(UPPER(TRIM(CAST(E.dv_hash_key_h_department AS VARCHAR(MAX)))), ''), '^^'), '||',
         ISNULL(NULLIF(UPPER(TRIM(CAST(G.TheFirstOfQuarter AS VARCHAR(MAX)))), ''), '^^'), '||',

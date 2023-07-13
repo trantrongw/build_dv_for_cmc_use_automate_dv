@@ -41,6 +41,10 @@ models:
   build_dv_for_cmc_use_automate_dv:
     # Config indicated by + and applies to all files under models/example/
     dv:
+      2_business:
+        +materialized: view
+      3_mart:
+        +materialized: table
       1_raw:
         11_staging:
           +materialized: view
@@ -54,3 +58,5 @@ models:
           +materialized: incremental
         16_reference:
           +materialized: incremental
+        
+

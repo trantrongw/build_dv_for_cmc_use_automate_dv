@@ -5,6 +5,7 @@ src_hashdiff: "dv_hashdiff_s_h_order"
 src_payload:
   - "[Activate]"
   - "[CreatedDate]"
+  - "[TotalBeforeVAT]"
 src_ldts: "dv_load_timestamp"
 src_source: "dv_recordsource"
 {%- endset -%}

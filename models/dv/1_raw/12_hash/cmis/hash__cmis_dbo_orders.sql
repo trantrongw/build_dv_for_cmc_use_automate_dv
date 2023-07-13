@@ -26,6 +26,7 @@ hashed_columns:
       columns:
         - "[Activate]"
         - "[CreatedDate]"
+        - "[TotalBeforeVAT]"
 {%- endset -%}
 
 {% set metadata_dict = fromyaml(yaml_metadata) %}
