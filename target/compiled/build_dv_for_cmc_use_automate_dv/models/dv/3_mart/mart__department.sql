@@ -1,3 +1,4 @@
+--fix
 select 
 	A.dv_hash_key_h_department as _KEY_DEPARTMENT,
     A.GroupCode as [Department Code],

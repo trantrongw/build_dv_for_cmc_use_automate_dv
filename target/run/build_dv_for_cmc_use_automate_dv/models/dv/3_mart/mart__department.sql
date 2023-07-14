@@ -5,7 +5,8 @@
    
     
 
-    EXEC('create view "dbo"."mart__department__dbt_tmp_temp_view" as select 
+    EXEC('create view "dbo"."mart__department__dbt_tmp_temp_view" as --fix
+select 
 	A.dv_hash_key_h_department as _KEY_DEPARTMENT,
     A.GroupCode as [Department Code],
     A.GroupName as [Department Name]

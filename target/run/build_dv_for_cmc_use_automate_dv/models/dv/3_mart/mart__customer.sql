@@ -5,7 +5,8 @@
    
     
 
-    EXEC('create view "dbo"."mart__customer__dbt_tmp_temp_view" as select
+    EXEC('create view "dbo"."mart__customer__dbt_tmp_temp_view" as --fix
+select
 A.dv_hash_key_h_customer as _KEY_CUSTOMER
 ,B.[Name] as [Customer Name]
 ,B.[Address]
