@@ -1,3 +1,4 @@
+--fix
 select
 A.dv_hash_key_h_customer as _KEY_CUSTOMER
 ,B.[Name] as [Customer Name]
