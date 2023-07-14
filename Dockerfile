@@ -19,5 +19,5 @@ RUN pip install --upgrade pip wheel setuptools
 RUN pip install -r requirements.txt
 
 # Build seeds, models, and snapshots (and run tests wherever applicable)
-CMD dbt clean && dbt deps && dbt build && python api.py
+CMD dbt clean && python api.py
 EXPOSE 80

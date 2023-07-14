@@ -1,0 +1,40 @@
+
+  
+    
+   
+   
+    
+
+    EXEC('create view "dbo"."mart__solution__dbt_tmp_temp_view" as select 
+	A.dv_hash_key_h_product as _KEY_SOLUTION
+	,A.Code as SolutionCode
+	,A.Name as SolutionName
+	,A.Description as SolutionDesc 
+	,A.Activate 
+	,A.ParentID as SolutionParentID 
+	,A.ADN 
+	,cast(
+		IIF(A.Code LIKE ''BM%'', IIF(A.Code NOT LIKE ''BM1%'', ''BigMove'', N''Truyền thống''), N''Truyền thống'') 
+	as varchar(50)
+	)	
+	AS [Solution Type]
+from "DWH"."dbo"."dv__s_bv_h_product_lastest" A;');
+
+
+   EXEC('CREATE TABLE "dbo"."mart__solution__dbt_tmp" AS (SELECT * FROM "dbo"."mart__solution__dbt_tmp_temp_view");');
+   
+    
+    
+
+    
+    
+
+    
+    
+
+    EXEC('DROP view IF EXISTS "dbo"."mart__solution__dbt_tmp_temp_view";');
+
+
+
+
+  
