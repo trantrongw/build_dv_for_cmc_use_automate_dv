@@ -35,7 +35,9 @@ sources:
                       Phiếu Hợp đồng
                       Module: Kinh doanh
       - name: Staging__CMIS_dbo_ContractDetails
-        description: '{{ doc("ContractDetails") }}'
+        description: >
+                      Chi tiết HĐ
+                      Module: Kinh doanh
       - name: Staging__CMIS_dbo_EstimateContracts
         description: >
                       Dự toán hợp đồng
@@ -61,7 +63,7 @@ sources:
                       Module: Quyết toán triển khai
       - name: Staging__CMIS_dbo_ContractLockStatus
         description: >
-                      Lịch sử mở/khóa hợp đồng
+                      Lịch sử mở/khóa hợp đồng. Cho biết là hợp đồng được tính doanh số vào lúc nào?
                       Module: Kinh doanh
       - name: Staging__CMIS_dbo_ContractLockTypes
         description: >
