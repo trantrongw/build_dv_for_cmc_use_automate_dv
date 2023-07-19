@@ -28,8 +28,8 @@ renamed as (
         {{ adapter.quote("BOKinds") }},
         {{ adapter.quote("RetailTypeID") }},
         {{ adapter.quote("WarrantyID") }},
-        {{ adapter.quote("DV_RECORD_SOURCE") }},
-        {{ adapter.quote("DV_APPLIED_DATE") }}
+        {{ adapter.quote("dv_record_source") }},
+        {{ adapter.quote("dv_applied_date") }}
 
     from source
 )

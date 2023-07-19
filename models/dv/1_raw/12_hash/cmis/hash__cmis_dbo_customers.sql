@@ -1,8 +1,8 @@
 {%- set yaml_metadata -%}
 source_model: "stg__cmis_dbo_customers"
 derived_columns:
-  dv_recordsource: "DV_RECORD_SOURCE"
-  dv_load_timestamp: cast( DV_APPLIED_DATE as DATETIME2(6))
+  dv_recordsource: "dv_record_source"
+  dv_load_timestamp: cast( dv_applied_date as DATETIME2(6))
   customer_code: cast(ID as VARCHAR(8000))
   customer_code2: cast(Code as VARCHAR(8000))
   dv_tenant_id: '!default'
@@ -30,7 +30,7 @@ hashed_columns:
     dv_hashdiff_s_h_customer_rt:
       is_hashdiff: true
       columns:
-        - "DV_APPLIED_DATE"
+        - "dv_applied_date"
 {%- endset -%}
 
 {% set metadata_dict = fromyaml(yaml_metadata) %}

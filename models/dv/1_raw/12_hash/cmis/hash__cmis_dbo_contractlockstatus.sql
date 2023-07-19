@@ -1,8 +1,8 @@
 {%- set yaml_metadata -%}
 source_model: "stg__cmis_dbo_contractlockstatus"
 derived_columns:
-  dv_recordsource: "DV_RECORD_SOURCE"
-  dv_load_timestamp: cast( DV_APPLIED_DATE as DATETIME2(6))
+  dv_recordsource: "dv_record_source"
+  dv_load_timestamp: cast( dv_applied_date as DATETIME2(6))
   contract_code: cast([ContractID] as VARCHAR(8000))
   dv_cdk_s_l_contract_lockstatus: cast([ID] as VARCHAR(8000))
   dv_tenant_id: '!default'

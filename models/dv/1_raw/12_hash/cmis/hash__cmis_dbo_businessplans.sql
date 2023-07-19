@@ -1,8 +1,8 @@
 {%- set yaml_metadata -%}
 source_model: "stg__cmis_dbo_businessplans"
 derived_columns:
-  dv_recordsource: "DV_RECORD_SOURCE"
-  dv_load_timestamp: cast( DV_APPLIED_DATE as DATETIME2(6))
+  dv_recordsource: "dv_record_source"
+  dv_load_timestamp: cast( dv_applied_date as DATETIME2(6))
   opportunity_code: cast([OpportunityID] as VARCHAR(8000))
   businessplan_code: cast([ID] as VARCHAR(8000))
   dv_tenant_id: '!default'

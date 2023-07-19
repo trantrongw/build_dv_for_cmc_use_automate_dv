@@ -19,6 +19,6 @@ IsSBAService,
 IsSBARetail,
 IsSBALicense,
 IsSBAServiceRetail,
-DV_RECORD_SOURCE,
-DV_APPLIED_DATE 
+{{ adapter.quote("dv_record_source") }},
+        {{ adapter.quote("dv_applied_date") }}
 from {{ source('DWH', 'Staging__CMIS_dbo_Branches') }}

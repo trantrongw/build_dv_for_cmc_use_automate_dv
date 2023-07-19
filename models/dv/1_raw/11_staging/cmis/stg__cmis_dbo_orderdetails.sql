@@ -39,8 +39,8 @@ renamed as (
         {{ adapter.quote("GroupID") }},
         {{ adapter.quote("IsMain") }},
         {{ adapter.quote("ParentID") }},
-        {{ adapter.quote("DV_RECORD_SOURCE") }},
-        {{ adapter.quote("DV_APPLIED_DATE") }}
+        {{ adapter.quote("dv_record_source") }},
+        {{ adapter.quote("dv_applied_date") }}
 
     from source
 )

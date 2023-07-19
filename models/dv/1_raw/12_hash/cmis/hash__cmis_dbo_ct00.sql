@@ -1,8 +1,8 @@
 {%- set yaml_metadata -%}
 source_model: "stg__cmis_dbo_ct00"
 derived_columns:
-  dv_recordsource: "DV_RECORD_SOURCE"
-  dv_load_timestamp: cast( DV_APPLIED_DATE as DATETIME2(6))
+  dv_recordsource: "dv_record_source"
+  dv_load_timestamp: cast( dv_applied_date as DATETIME2(6))
   opportunity_code: "ma_vv" 
   invoice_code: "stt_rec" 
   dv_cdk_l_opportunity_invoice: "line_nbr"
