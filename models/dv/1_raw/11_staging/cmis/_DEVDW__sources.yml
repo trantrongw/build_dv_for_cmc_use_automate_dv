@@ -6,6 +6,7 @@ sources:
     schema: dbo
     tables:
       - name: Staging__CMIS_dbo_Opportunities
+      
         description: >
                       Danh sách mã vụ việc 
                       Module: Kinh doanh
@@ -128,6 +129,7 @@ sources:
                       sản phẩm của CMC
    
       
+
   
 
       
