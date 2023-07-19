@@ -9,7 +9,7 @@ app = Flask(__name__)
 def run_dbt():
     try:
         # Run dbt command using subprocess
-        result = subprocess.run("dbt run", shell=True)
+        result = subprocess.run("dbt build --profiles-dir profiles", shell=True)
 
         if result.returncode == 0:
             return jsonify({'success': True, 'message': 'dbt run completed successfully'})
