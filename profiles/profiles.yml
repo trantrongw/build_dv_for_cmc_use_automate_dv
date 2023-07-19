@@ -1,5 +1,5 @@
 build_dv_for_cmc_use_automate_dv:
-  target: dev
+  target: pro
   outputs:
     dev:
       type: fabric
