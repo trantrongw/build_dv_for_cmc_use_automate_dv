@@ -1,5 +1,6 @@
 --fix
 select
+{% if target.name == 'dev' %} top 0 {% endif %}
 A.dv_hash_key_h_customer as _KEY_CUSTOMER
 ,B.[Name] as [Customer Name]
 ,B.[Address]

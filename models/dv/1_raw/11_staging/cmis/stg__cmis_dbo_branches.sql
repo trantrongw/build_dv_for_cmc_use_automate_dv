@@ -1,4 +1,5 @@
 select 
+{% if target.name == 'dev' %} top 0 {% endif %}
 ID,
 Code,
 Name,

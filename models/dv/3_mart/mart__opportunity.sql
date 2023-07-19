@@ -1,4 +1,5 @@
 select 
+{% if target.name == 'dev' %} top 0 {% endif %}
     B.dv_hash_key_h_opportunity AS _KEY_OPP
     ,D.opportunity_code as Code
 	,CAST(B.CreatedDate AS DATE) AS _KEY_OPP_DATE

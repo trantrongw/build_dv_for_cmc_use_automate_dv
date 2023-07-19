@@ -1,5 +1,6 @@
 --fix
 select 
+{% if target.name == 'dev' %} top 0 {% endif %}
 	A.dv_hash_key_h_department as _KEY_DEPARTMENT,
     A.GroupCode as [Department Code],
     A.GroupName as [Department Name]

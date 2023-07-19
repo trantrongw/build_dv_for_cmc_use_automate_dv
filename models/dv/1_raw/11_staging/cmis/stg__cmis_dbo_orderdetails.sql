@@ -1,5 +1,8 @@
 with source as (
-      select * from {{ source('DWH', 'Staging__CMIS_dbo_OrderDetails') }}
+      select 
+      {% if target.name == 'dev' %} top 0 {% endif %}
+      * 
+      from {{ source('DWH', 'Staging__CMIS_dbo_OrderDetails') }}
 ),
 renamed as (
     select

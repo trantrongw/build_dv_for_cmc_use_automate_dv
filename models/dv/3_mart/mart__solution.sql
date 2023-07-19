@@ -1,4 +1,5 @@
 select 
+	{% if target.name == 'dev' %} top 0 {% endif %}
 	A.dv_hash_key_h_product as _KEY_SOLUTION
 	,A.Code as SolutionCode
 	,A.Name as SolutionName

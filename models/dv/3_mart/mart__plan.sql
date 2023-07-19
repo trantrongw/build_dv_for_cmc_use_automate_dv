@@ -1,4 +1,5 @@
 select 
+	{% if target.name == 'dev' %} top 0 {% endif %}
 	CONVERT(CHAR(32), HASHBYTES('MD5', NULLIF(CONCAT(
         ISNULL(NULLIF(UPPER(TRIM(CAST(E.dv_hash_key_h_user AS VARCHAR(MAX)))), ''), '^^'), '||',
         ISNULL(NULLIF(UPPER(TRIM(CAST(E.dv_hash_key_h_department AS VARCHAR(MAX)))), ''), '^^'), '||',

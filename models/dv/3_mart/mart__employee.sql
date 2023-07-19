@@ -1,4 +1,5 @@
 select
+{% if target.name == 'dev' %} top 0 {% endif %}
     a.dv_hash_key_h_user as _KEY_EMPLOYEE,
     concat(concat(a.FirstName, ' '), a.LastName) as fullname,
     a.FirstName,
