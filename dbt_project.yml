@@ -42,7 +42,12 @@ models:
     # Config indicated by + and applies to all files under models/example/
     dv:
       2_business:
-        +materialized: view
+        21_link:
+          +materialized: view
+        22_satellite:
+          +materialized: view
+        23_pit:
+          +materialized: pit_incremental
       3_mart:
         +materialized: table
       1_raw:

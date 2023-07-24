@@ -127,6 +127,9 @@ sources:
       - name: Staging__CMIS_dbo_Branches
         description: >
                       sản phẩm của CMC
+      - name: as_of_date
+        description: >
+                      date cho PIT
    
       
 
