@@ -2,3 +2,4 @@ logs/
 target/
 profiles/
 dbt_packages/
+dbt_packages/automate_dv
