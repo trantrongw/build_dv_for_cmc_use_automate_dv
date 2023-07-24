@@ -28,7 +28,7 @@ vars:
   applied_date: '1992-01-08'
   dbt_date:time_zone: "Asia/Ho_Chi_Minh"
   hash: MD5 # or SHA
-  enable_ghost_records: false
+  enable_ghost_records: true
   system_record_value: 'DBTVAULT_SYSTEM'
 
 # Configuring models
